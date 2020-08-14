@@ -1,0 +1,51 @@
+[
+  {
+    "id": "builtin_carousel-Ptflpu",
+    "formData": {
+      "typing$en": true,
+      "items$en": [
+        {
+          "title": "FAQs",
+          "subtitle": "Answers to frequently asked sales and distribution queries.",
+          "actions": [
+            {
+              "action": "Say something",
+              "title": "I have a Question",
+              "payload": "",
+              "text": "I have a Question"
+            }
+          ]
+        },
+        {
+          "title": "Sales Order Distribution",
+          "subtitle": "Assistance to Sales Order Distribution ERP Module",
+          "actions": [
+            {
+              "action": "Say something",
+              "title": "Cannot Print Pickslip",
+              "text": "Cannot Print Pickslip"
+            },
+            {
+              "action": "Say something",
+              "title": "Cannot Confirm Shipment",
+              "text": "Cannot Confirm Shipment"
+            },
+            {
+              "action": "Say something",
+              "title": "Cannot Print Invoice",
+              "text": "Cannot Print Invoice"
+            },
+            {
+              "action": "Say something",
+              "title": "Cannot do Sales Update",
+              "text": "Cannot do Sales Update"
+            }
+          ]
+        }
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-07T09:31:30.723Z",
+    "modifiedOn": "2020-07-07T09:31:30.723Z"
+  }
+]

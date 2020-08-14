@@ -1,0 +1,73 @@
+[
+  {
+    "id": "builtin_single-choice-So79y6",
+    "formData": {
+      "choices$en": [
+        {
+          "title": "Cannot Print Pickslip",
+          "value": "Cannot Print Pickslip"
+        },
+        {
+          "title": "Cannot Confirm Shipment",
+          "value": "Cannot Confirm Shipment"
+        },
+        {
+          "title": "Cannot Print Invoice",
+          "value": "Cannot Print Invoice"
+        },
+        {
+          "title": "Cannot do Sales Update",
+          "value": "Cannot do Sales Update"
+        }
+      ],
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Assistance to Sales Order Distribution ERP Module"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-09T08:39:45.306Z",
+    "modifiedOn": "2020-07-09T08:39:45.306Z"
+  },
+  {
+    "id": "builtin_single-choice-jSMQnR",
+    "formData": {
+      "choices$en": [
+        {
+          "title": "Yes",
+          "value": "Yes"
+        },
+        {
+          "title": "No",
+          "value": "No"
+        }
+      ],
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Do you still need further assistance?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T03:39:15.306Z",
+    "modifiedOn": "2020-07-13T03:39:15.306Z"
+  },
+  {
+    "id": "builtin_single-choice-8C4dKr",
+    "formData": {
+      "choices$en": [
+        {
+          "title": "Yes",
+          "value": "Yes"
+        },
+        {
+          "title": "No",
+          "value": "No"
+        }
+      ],
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Your query got no results. Would you like to try rephrashing your question?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T03:49:28.471Z",
+    "modifiedOn": "2020-07-13T03:49:28.471Z"
+  }
+]

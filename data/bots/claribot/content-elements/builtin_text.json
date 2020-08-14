@@ -1,0 +1,194 @@
+[
+  {
+    "id": "builtin_text-fqf4iG",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "I have a Question"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-07T09:28:20.195Z",
+    "modifiedOn": "2020-07-07T09:28:20.195Z"
+  },
+  {
+    "id": "builtin_text-Qp_KGi",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "What would you like to know?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-07T09:28:34.395Z",
+    "modifiedOn": "2020-07-07T09:28:34.395Z"
+  },
+  {
+    "id": "builtin_text-gmZPCB",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please refer below document for more information:\n<a href=\"{{event.state.temp.documentOneURL}}\"  target=\"_blank\">{{event.state.temp.documentOneLabel}}</a>"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-07T09:28:47.366Z",
+    "modifiedOn": "2020-07-13T03:30:42.518Z"
+  },
+  {
+    "id": "builtin_text-kJbqdF",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Hi! I'm ClariBot. Here are some things I can help you with.",
+      "variations$en": [
+        "Hey! I'm ClariBot. Here are some things I can help you with.",
+        "Hello! I'm ClariBot. Here are some things I can help you with.",
+        "Greetings! I'm ClariBot. Here are some things I can help you with."
+      ]
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-07T09:29:22.764Z",
+    "modifiedOn": "2020-07-07T09:29:22.764Z"
+  },
+  {
+    "id": "builtin_text-JmEhJc",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please refer below document for more information:\n<a href=\"{{event.state.temp.documentOneURL}}\"  target=\"_blank\">{{event.state.temp.documentOneLabel}}</a>\n<a href=\"{{event.state.temp.documentTwoURL}}\"  target=\"_blank\">{{event.state.temp.documentTwoLabel}}</a>"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-09T10:26:38.232Z",
+    "modifiedOn": "2020-07-13T03:30:15.249Z"
+  },
+  {
+    "id": "builtin_text-OidivF",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Otherwise"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-10T08:39:21.629Z",
+    "modifiedOn": "2020-07-10T08:39:21.629Z"
+  },
+  {
+    "id": "builtin_text-X9Mg1Q",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please refer below document for more information:\n<a href=\"{{event.state.temp.documentOneURL}}\"  target=\"_blank\">{{event.state.temp.documentOneLabel}}</a>\n<a href=\"{{event.state.temp.documentTwoURL}}\"  target=\"_blank\">{{event.state.temp.documentTwoLabel}}</a>\n<a href=\"{{event.state.temp.documentThreeURL}}\"  target=\"_blank\">{{event.state.temp.documentThreeLabel}}</a>\n<a href=\"{{event.state.temp.documentFourURL}}\"  target=\"_blank\">{{event.state.temp.documentFourLabel}}</a>"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-10T08:41:16.735Z",
+    "modifiedOn": "2020-07-13T03:29:31.021Z"
+  },
+  {
+    "id": "builtin_text-D5mRWf",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please refer below document for more information:\n<a href=\"{{event.state.temp.documentOneURL}}\"  target=\"_blank\">{{event.state.temp.documentOneLabel}}</a>\n<a href=\"{{event.state.temp.documentTwoURL}}\"  target=\"_blank\">{{event.state.temp.documentTwoLabel}}</a>\n<a href=\"{{event.state.temp.documentThreeURL}}\"  target=\"_blank\">{{event.state.temp.documentThreeLabel}}</a>"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-10T08:41:35.352Z",
+    "modifiedOn": "2020-07-13T03:29:49.816Z"
+  },
+  {
+    "id": "builtin_text-xf5ykh",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Do you still need further assistance?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T03:38:06.080Z",
+    "modifiedOn": "2020-07-13T03:38:06.080Z"
+  },
+  {
+    "id": "builtin_text-iYJV-1",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Have a Nice Day!"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T03:51:25.472Z",
+    "modifiedOn": "2020-07-13T03:51:25.472Z"
+  },
+  {
+    "id": "builtin_text-yjd6zJ",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Oops. Something went wrong!"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-13T04:51:15.373Z",
+    "modifiedOn": "2020-07-13T04:51:15.373Z"
+  },
+  {
+    "id": "builtin_text-ORQ5Kl",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please enter Order No, Order Type and Company No in the following format:\nOrder No/Order Type/Company No\neg: 1234/AA/12345"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-15T13:44:38.734Z",
+    "modifiedOn": "2020-07-15T13:44:38.734Z"
+  },
+  {
+    "id": "builtin_text-2A9qsB",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please wait while we check you issue."
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-15T13:45:39.343Z",
+    "modifiedOn": "2020-07-15T13:45:39.343Z"
+  },
+  {
+    "id": "builtin_text-8E2uUG",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "{{temp.SOStatus}}"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-15T14:38:40.160Z",
+    "modifiedOn": "2020-07-15T14:38:40.160Z"
+  },
+  {
+    "id": "builtin_text-hUqLGK",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Please enter Order No, Order Type and Company No in the following format only: Order No/Order Type/Company No eg: 1234/AA/12345"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-16T05:01:50.423Z",
+    "modifiedOn": "2020-07-16T05:01:50.423Z"
+  },
+  {
+    "id": "builtin_text-6Wk2w3",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "Input in incorrrect format!"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-16T11:48:53.228Z",
+    "modifiedOn": "2020-07-16T11:48:53.228Z"
+  },
+  {
+    "id": "builtin_text-2zClhF",
+    "formData": {
+      "markdown$en": true,
+      "typing$en": true,
+      "text$en": "*{{temp.abc}}*"
+    },
+    "createdBy": "admin",
+    "createdOn": "2020-07-16T12:09:57.472Z",
+    "modifiedOn": "2020-07-16T12:09:57.472Z"
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "6rqerk2yyb",
+    "contentId": "builtin_single-choice-So79y6",
+    "invalidContentId": "",
+    "keywords": {
+      "Cannot Print Pickslip": [
+        "Cannot Print Pickslip"
+      ],
+      "Cannot Confirm Shipment": [
+        "Cannot Confirm Shipment"
+      ],
+      "Cannot Print Invoice": [
+        "Cannot Print Invoice"
+      ],
+      "Cannot do Sales Update": [
+        "Cannot do Sales Update"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-So79y6 {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "421769"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"6rqerk2yyb\",\"contentId\":\"builtin_single-choice-So79y6\",\"invalidContentId\":\"\",\"keywords\":{\"Cannot Print Pickslip\":[\"Cannot Print Pickslip\"],\"Cannot Confirm Shipment\":[\"Cannot Confirm Shipment\"],\"Cannot Print Invoice\":[\"Cannot Print Invoice\"],\"Cannot do Sales Update\":[\"Cannot do Sales Update\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-6rqerk2yyb'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "onEnter": [],
+      "id": "441836"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"6rqerk2yyb\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-6rqerk2yyb']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "922497"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "017401"
+    }
+  ]
+}

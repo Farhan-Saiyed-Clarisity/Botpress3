@@ -1,0 +1,668 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "FAQs",
+  "nodes": [
+    {
+      "id": "entry",
+      "name": "entry",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-kJbqdF",
+        "say #!builtin_carousel-Ptflpu"
+      ],
+      "onReceive": null
+    },
+    {
+      "id": "3932e22bdc",
+      "name": "FAQs_Display_Documents-1",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-gmZPCB"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-45c198",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Sales_Order_Distribution",
+      "flow": "skills/choice-45c198.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Cannot ...]",
+          "condition": "temp['skill-choice-ret-6rqerk2yyb'] == \"Cannot Print Pickslip\"",
+          "node": "Cannot_Print_Pickslip"
+        },
+        {
+          "caption": "User picked [Cannot ...]",
+          "condition": "temp['skill-choice-ret-6rqerk2yyb'] == \"Cannot Confirm Shipment\"",
+          "node": "Cannot_Confirm_Shipment"
+        },
+        {
+          "caption": "User picked [Cannot ...]",
+          "condition": "temp['skill-choice-ret-6rqerk2yyb'] == \"Cannot Print Invoice\"",
+          "node": "Cannot_Print_Invoice"
+        },
+        {
+          "caption": "User picked [Cannot ...]",
+          "condition": "temp['skill-choice-ret-6rqerk2yyb'] == \"Cannot do Sales Update\"",
+          "node": "Cannot_do_Sales_Update"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "SnD_Otherwise"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "21daf88a2e",
+      "name": "FAQs_Display_Documents-2",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-JmEhJc"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "65520ccbda",
+      "name": "FAQs_Display_Documents-3",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-D5mRWf"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "9c9c8a9a9d",
+      "name": "FAQs_Display_Documents-4",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-X9Mg1Q"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "9e690cdfab",
+      "name": "FAQs",
+      "next": [
+        {
+          "condition": "temp.documentCount==1",
+          "node": "FAQs_Display_Documents-1"
+        },
+        {
+          "condition": "temp.documentCount==2",
+          "node": "FAQs_Display_Documents-2"
+        },
+        {
+          "condition": "temp.documentCount==3",
+          "node": "FAQs_Display_Documents-3"
+        },
+        {
+          "condition": "temp.documentCount>=4",
+          "node": "FAQs_Display_Documents-4"
+        },
+        {
+          "condition": "temp.documentCount==0",
+          "node": "Rephrase_Question"
+        },
+        {
+          "condition": "true",
+          "node": "FAQ_Otherwise"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Qp_KGi"
+      ],
+      "onReceive": [
+        "getFAQDocuments {\"query\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-1ce5a5",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Further_Assistance",
+      "flow": "skills/choice-1ce5a5.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Yes]",
+          "condition": "temp['skill-choice-ret-v4e8nnxh01'] == \"Yes\"",
+          "node": "FAQs"
+        },
+        {
+          "caption": "User picked [No]",
+          "condition": "temp['skill-choice-ret-v4e8nnxh01'] == \"No\"",
+          "node": "Exit"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "node-b539"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "d79015f258",
+      "name": "node-e070",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Rephrase_Question"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-d2371d",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Rephrase_Question",
+      "flow": "skills/choice-d2371d.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Yes]",
+          "condition": "temp['skill-choice-ret-qpo9faqiu4'] == \"Yes\"",
+          "node": "FAQs"
+        },
+        {
+          "caption": "User picked [No]",
+          "condition": "temp['skill-choice-ret-qpo9faqiu4'] == \"No\"",
+          "node": "Exit"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "node-e070"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "32a6a6a7e2",
+      "name": "Exit",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-iYJV-1"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "00388df708",
+      "name": "node-b539",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Further_Assistance"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "d9203c46f1",
+      "name": "FAQ_Otherwise",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-yjd6zJ"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "d52282b3f0",
+      "name": "node-caeb",
+      "next": [
+        {
+          "condition": "temp.abc==1",
+          "node": "node-db27"
+        },
+        {
+          "condition": "temp.abc==2",
+          "node": "node-6c3d"
+        }
+      ],
+      "onEnter": [
+        "test {\"value\":\"\\\"abc\\\"\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "4fbaa4a26b",
+      "name": "node-db27",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-iYJV-1"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "54daacebe5",
+      "name": "node-6c3d",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-OidivF"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "56cd409178",
+      "name": "Cannot_Print_Pickslip",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_Print_Pickslip_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "Cannot_Print_Pickslip_Input_2"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ORQ5Kl"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "5a97d28573",
+      "name": "Cannot_Confirm_Shipment",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_Confirm_Shipment_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "Cannot_Confirm_Shipment_Input_2"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ORQ5Kl"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "effa4aa6b8",
+      "name": "Cannot_Print_Invoice",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_Print_Invoice_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "Cannot_Print_Invoice_Input_2"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ORQ5Kl"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "d92d5fcada",
+      "name": "Cannot_do_Sales_Update",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_do_Sales_Update_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "Cannot_do_Sales_Update_Input_2"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ORQ5Kl"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "6842fb4620",
+      "name": "SnD_Otherwise",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-yjd6zJ"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "516e5d0cd4",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "SnD_Further_Assistance",
+      "flow": "skills/choice-1ce5a5.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Yes]",
+          "condition": "temp['skill-choice-ret-v4e8nnxh01'] == \"Yes\"",
+          "node": "Sales_Order_Distribution"
+        },
+        {
+          "caption": "User picked [No]",
+          "condition": "temp['skill-choice-ret-v4e8nnxh01'] == \"No\"",
+          "node": "Exit"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "node-2f72"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "263d721610",
+      "name": "node-2f72",
+      "next": [
+        {
+          "condition": "true",
+          "node": "SnD_Further_Assistance"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "885414f185",
+      "name": "Cannot_Confirm_Shipment_Status",
+      "next": [
+        {
+          "condition": "true",
+          "node": "SnD_Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "checkSOStatus {\"input\":\"{{event.payload.text}}\",\"method\":\"2\"}",
+        "say #!builtin_text-8E2uUG"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "d418316bb1",
+      "name": "Cannot_Print_Invoice_Status",
+      "next": [
+        {
+          "condition": "true",
+          "node": "SnD_Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "checkSOStatus {\"input\":\"{{event.payload.text}}\",\"method\":\"3\"}",
+        "say #!builtin_text-8E2uUG"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "8214811e14",
+      "name": "Cannot_do_Sales_Update_Status",
+      "next": [
+        {
+          "condition": "true",
+          "node": "SnD_Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "checkSOStatus {\"input\":\"{{event.payload.text}}\",\"method\":\"4\"}",
+        "say #!builtin_text-8E2uUG"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "b1ee2452c7",
+      "name": "Cannot_Print_Pickslip_Status",
+      "next": [
+        {
+          "condition": "true",
+          "node": "SnD_Further_Assistance"
+        }
+      ],
+      "onEnter": [
+        "checkSOStatus {\"input\":\"{{event.payload.text}}\",\"method\":\"1\"}",
+        "say #!builtin_text-8E2uUG"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "eae22dce03",
+      "name": "node-f372",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Cannot_Print_Pickslip_Input_2"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "da762ea7b2",
+      "name": "node-da29",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Cannot_Confirm_Shipment_Input_2"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "196f7cd4a8",
+      "name": "node-22fb",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Cannot_Print_Invoice_Input_2"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "b96a272263",
+      "name": "node-cf35",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Cannot_do_Sales_Update_Input_2"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "32fc2b93d4",
+      "name": "Cannot_Print_Pickslip_Input_2",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_Print_Pickslip_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "node-f372"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-6Wk2w3",
+        "say #!builtin_text-hUqLGK"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "52c1ada5ed",
+      "name": "Cannot_Confirm_Shipment_Input_2",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_Confirm_Shipment_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "node-da29"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-6Wk2w3",
+        "say #!builtin_text-hUqLGK"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4aa73e6269",
+      "name": "Cannot_Print_Invoice_Input_2",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_Print_Invoice_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "node-22fb"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-6Wk2w3",
+        "say #!builtin_text-hUqLGK"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "be7e33aa9d",
+      "name": "Cannot_do_Sales_Update_Input_2",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "Cannot_do_Sales_Update_Status"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "node-cf35"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-6Wk2w3",
+        "say #!builtin_text-hUqLGK"
+      ],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "250286e699",
+      "name": "node-c38f",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-6Wk2w3",
+        "say #!builtin_text-2zClhF"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "99da55fa25",
+      "name": "node-9fbe",
+      "next": [],
+      "onEnter": [
+        "say #!builtin_text-2A9qsB",
+        "say #!builtin_text-2zClhF"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "78dc1f7ecc",
+      "name": "Cannot_Print_Invoice-copy",
+      "next": [
+        {
+          "condition": "temp.SOInputFormat===true",
+          "node": "node-9fbe"
+        },
+        {
+          "condition": "temp.SOInputFormat===false",
+          "node": "node-c38f"
+        }
+      ],
+      "onEnter": [],
+      "onReceive": [
+        "checkSOInput {\"input\":\"{{event.payload.text}}\"}"
+      ],
+      "type": "standard"
+    }
+  ]
+}
